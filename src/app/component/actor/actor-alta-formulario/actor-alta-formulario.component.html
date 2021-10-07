@@ -1,0 +1,44 @@
+<h4 class="mb-3">Datos personales</h4>
+<form class="needs-validation" [formGroup]="forma" (ngSubmit) = "AltaDelActor()">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="nombre">Nombre:</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" formControlName = 'nombre'>
+            <!--small class = "invalid" *ngIf = "forma.controls.nombre.errors?.required && forma.controls.nombre.touched">
+                Falta nombre...
+            </small-->
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="apellido">Apellido:</label>
+            <input type="text" class="form-control" id="apellido" name="apellido" formControlName="apellido">
+            <!--small class = "invalid" *ngIf = "forma.controls.apellido.errors?.required && forma.controls.apellido.touched">
+                Falta apellido...
+            </small-->
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="email">Email <span class="text-muted">(Optional)</span></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" formControlName="email">
+            <!--small class="invalid" *ngIf="forma.controls.email.errors?.required && forma.controls.email.touched">
+                Falta email...
+            </small-->
+
+        </div>
+        <div class="col-md-6 mb-3">
+            <label for="nacionalidad">Nacionalidad:</label>
+            <input type="text" class="form-control" id="nacionalidad" name="nacionalidad" placeholder={{paisElegido.name}} 
+            formControlNamevalue="nacionalidad" readonly>
+            <!--small class="invalid" *ngIf="forma.controls.nacionalidad.errors?.nacionalidad">
+                Falta seleccionar el pais...
+            </small-->
+        </div>
+    </div>   
+   
+    <hr class="mb-4">
+
+    <button class="btn btn-primary btn-lg btn-block" type="submit" >
+        Confirmar...
+    </button>
+</form>

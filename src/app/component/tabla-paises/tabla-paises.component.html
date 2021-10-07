@@ -1,0 +1,16 @@
+<h4 class="d-flex justify-content-between align-items-center mb-3">
+    Seleccione un pais
+  </h4>
+  <ul class="list-group mb-3">
+    <li class="list-group-item d-flex justify-content-between lh-condensed"
+    *ngFor="let paises of listaDePaises | slice:0:6; let i=index">
+        <button class="btn btn-light" (click)="click_PaisElegido(paises)">
+            <!--p>{{paises.nombre}}</p>            
+            <img src={{paises.ruta}} -->
+            <!--p>{{paises.name}}</p-->            
+            <img src={{paises.flag}}>
+        </button>
+    </li>
+  </ul>
+
+  

@@ -1,0 +1,84 @@
+<h4 class="mb-3">Datos de la Pelicula</h4>
+<!--form class="needs-validation" [formGroup]="" (ngSubmit) = ""-->
+<form class="needs-validation" novalidate (ngSubmit)="CargarPelicula()">
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label for="titulo">Titulo:</label>
+            <input type="text" class="form-control" id="titulo" name="titulo" [(ngModel)]="titulo_peli">
+            <div class="invalid-feedback">
+                Falta nombre...
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <label for="genero">Genero:</label>
+            <select class="custom-select d-block w-100" name="genero" id="genero" [(ngModel)]='genero_peli'
+                (change)="GeneroSeleccionado()">
+                <option>Fantasia</option>
+                <option>Accion</option>
+                <option>Comedia</option>
+                <option>Drama</option>
+                <option>Policial</option>
+                <option>Terror</option>
+                <option>Suspenso</option>
+                <option>Romantica</option>
+            </select>
+            <div class="invalid-feedback">
+                Falta seleccion...
+            </div>
+        </div>
+    </div>
+
+    <div class=" row">
+                <div class="col-md-6 mb-3">
+                    <label for="fechaEstreno">Fecha del estreno: <span class="text-muted">(Optional)</span></label>
+                    <input type="date" class="form-control" id="fechaEstreno" name="fechaEstreno"
+                        placeholder="dd/mm/aaaa" [ngModel]="fechaEstreno_peli |  date:'yyyy-MM-dd'"
+                        (ngModelChange)="fechaEstreno_peli = $event">
+                    <div class="invalid-feedback">
+                        Falta fecha...
+                    </div>
+
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="fotoPelicula">Imagen para Cartelera:</label>
+                    <!--input type="file" class="form-control" id="fotoPelicula" name="nacionafotoPeliculalidad"
+                        (change)='nuevoArchivo($event)'-->
+                    <input type="text" class="form-control" id="fotoPelicula" name="fotoPelicula" [(ngModel)]='fotoPelicula_peli'
+                        (change)='nuevoArchivo($event)' >
+                    <div class="invalid-feedback">
+                        Falta imagen...
+                    </div>
+                </div>
+            </div>
+
+            <hr class="mb-4">
+
+            <h4 class="mb-3">Informacion del Actor</h4>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="nombreActor">Nombre</label>
+                    <input type="text" class="form-control" id="nombreActor" name="nombreActor"
+                        placeholder={{actorSeleccionado.nombre}} readonly>
+
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="apellidoActor">Apellido</label>
+                    <input type="text" class="form-control" id="apellidoActor" name="apellidoActor"
+                        placeholder={{actorSeleccionado.apellido}} readonly>
+
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="emailActor">Email</label>
+                    <input type="text" class="form-control" id="emailActor" name="emailActor"
+                        placeholder={{actorSeleccionado.email}} readonly>
+
+                </div>
+            </div>
+
+            <hr class="mb-4">
+
+            <button class="btn btn-primary btn-lg btn-block" type="submit">
+                Confirmar...
+            </button>
+</form>

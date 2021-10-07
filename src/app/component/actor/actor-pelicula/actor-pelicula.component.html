@@ -1,0 +1,35 @@
+<body>
+    <main role="main">
+        <div class="container jumbotron">
+            <div class="row">
+                <div class="col-md-4 order-md-2 mb-4">
+                    <app-actor-listado
+                    [listaActores]='listaDeActores' 
+                    (actorElegido_evento)="MostrarActores($event)"
+                    ></app-actor-listado>
+                </div>              
+            </div>
+      </div>
+
+        <div class="container">
+            <!-- Example row of columns -->
+            <div class="row">
+                <div class="col-md-4">
+                    <app-pelicula-actor
+                    [MostrarPelicula] = 'actorElegido'
+                    ></app-pelicula-actor>
+                </div>
+                <div class="col-md-4 col_medio">
+                    <app-info-pais
+                    [MostrarInfoPais] = 'actorElegido'
+                    ></app-info-pais>
+                </div>
+                <div class="col-md-4">
+                    <app-info-actor
+                    [MostrarInfoActor]='actorElegido'
+                    ></app-info-actor>
+                </div>
+            </div>
+        </div> <!-- /container -->
+    </main>
+</body>

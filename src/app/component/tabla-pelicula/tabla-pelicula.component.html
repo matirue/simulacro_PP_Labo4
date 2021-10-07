@@ -1,0 +1,12 @@
+<h1>Peliculas</h1> 
+
+<div class="container grid">
+  <div class="wrapper" *ngFor="let pelicula of listaDePeliculas">
+    <div class="card mb-4" style="background-color: transparent; width: fit-content;">
+        <button class="btn btn-outline-primary" (click)="SeleccionarUnaPelicula(pelicula)">
+          <img src={{pelicula.fotoDePelicula}}>
+        </button>
+    </div>
+    
+  </div>
+</div>
